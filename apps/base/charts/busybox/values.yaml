@@ -1,0 +1,26 @@
+# Default values for busybox.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+replicaCount: 1
+image:
+  repository: busybox 
+  pullPolicy: IfNotPresent
+  tag: latest 
+service:
+  name: busybox
+  type: ClusterIP
+  port: 32580 
+resources: 
+   limits:
+     cpu: 100m
+     memory: 128Mi
+   requests:
+     cpu: 100m
+     memory: 128Mi
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 2 
+nodeSelector: {}
+tolerations: []
+affinity: {}

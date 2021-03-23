@@ -1,0 +1,4 @@
+Busybox
+
+namespace {{ .Release.Namespace }}
+app {{ template "busybox.fullname" . }}
