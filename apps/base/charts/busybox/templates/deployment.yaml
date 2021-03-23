@@ -39,7 +39,7 @@ spec:
           command:
           - /bin/sh
           - -c
-          - sleep 120 
+          - sleep 600 
           livenessProbe:
             exec:
               command:
