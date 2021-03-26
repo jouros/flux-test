@@ -1,3 +1,28 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: busybox
+spec: {}
+status: {}
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
+kind: Kustomization
+metadata:
+  name: busyboxconfigmap
+  namespace: busybox 
+spec:
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  interval: 5m0s
+  path: ./apps/kustomize/test1/busybox
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: podinfo
+  validation: client
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -13,4 +38,8 @@ spec:
         name: podinfo
   interval: 10m0s
   targetNamespace: default
-
+  values:
+    valuesFrom:
+      - kind: ConfigMap
+        name: busyboxconfigmap
+        valuesKey: data.txt
