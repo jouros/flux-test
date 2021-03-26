@@ -10,13 +10,14 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
 kind: Kustomization
 metadata:
   name: busyboxconfigmap
-  namespace: busybox 
+  namespace: flux-system 
 spec:
   decryption:
     provider: sops
     secretRef:
       name: sops-gpg
   interval: 5m0s
+  targetNamespace: busybox
   path: ./apps/kustomize/test1/busybox
   prune: true
   sourceRef:
@@ -37,7 +38,7 @@ spec:
         kind: GitRepository
         name: podinfo
   interval: 10m0s
-  targetNamespace: default
+  targetNamespace: busybox 
   values:
     valuesFrom:
       - kind: ConfigMap
