@@ -41,7 +41,7 @@ spec:
           - -c
           - sleep 600 
           env:
-          - name: {{ .Values..name }} 
+          - name: {{ .Values.name }} 
             value: {{ .Values.value | quote }} 
           - name: {{  .Values.name }} 
             value: {{ .Values.value | quote }} 
