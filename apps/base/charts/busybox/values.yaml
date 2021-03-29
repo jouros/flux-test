@@ -7,12 +7,12 @@ image:
   pullPolicy: IfNotPresent
   tag: latest 
 env:
-  - name: first
-    value: "6"
-  - name: second
-    value: "6"
-  - name: third
-    value: "6"
+  name: first
+  value: "7"
+  name: second
+  value: "7"
+  name: third
+  value: "7"
 service:
   name: busybox
   type: ClusterIP
