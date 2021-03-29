@@ -41,14 +41,12 @@ spec:
           - -c
           - sleep 600 
           env:
-            {{- range .Values.env }}
-          - name: {{ .name }} 
-            value: {{ .value | quote }} 
-          - name: {{ .name }} 
-            value: {{ .value | quote }} 
-          - name: {{ .name }}
-            value: {{ .value | quote }}
-          {{- end }}
+          - name: {{ .Values..name }} 
+            value: {{ .Values.value | quote }} 
+          - name: {{  .Values.name }} 
+            value: {{ .Values.value | quote }} 
+          - name: {{ .Values.name }}
+            value: {{ .Values.value | quote }}
           livenessProbe:
             exec:
               command:
