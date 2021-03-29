@@ -6,6 +6,13 @@ image:
   repository: busybox 
   pullPolicy: IfNotPresent
   tag: latest 
+env:
+  - name: first
+    value: "0"
+  - name: second
+    value: "0"
+  - name: third
+    value: "0"
 service:
   name: busybox
   type: ClusterIP
