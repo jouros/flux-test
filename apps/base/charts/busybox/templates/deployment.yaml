@@ -40,6 +40,13 @@ spec:
           - /bin/sh
           - -c
           - sleep 600 
+          env:
+          - name: first
+            value: "0"
+          - name: sencond
+            value: "0"
+          - name: third
+            value: "0"
           livenessProbe:
             exec:
               command:
