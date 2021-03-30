@@ -17,7 +17,6 @@ spec:
     secretRef:
       name: sops-gpg
   interval: 5m0s
-  targetNamespace: busybox
   path: ./apps/kustomize/test1/busybox
   prune: true
   sourceRef:
