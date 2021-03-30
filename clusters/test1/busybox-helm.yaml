@@ -43,3 +43,4 @@ spec:
     - kind: ConfigMap
       name: busyboxdata
       valuesKey: data.txt
+      namespace: busybox
