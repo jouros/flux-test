@@ -41,11 +41,11 @@ spec:
           - -c
           - sleep 600 
           env:
-          - {{ .Values.env.name1 }}: 
+          - name: {{ .Values.env.name1 }} 
             value: {{ .Values.env.value | quote }} 
-          - {{  .Values.env.name2 }}: 
+          - name: {{  .Values.env.name2 }} 
             value: {{ .Values.env.value | quote }} 
-          - {{ .Values.env.name3 }}
+          - name: {{ .Values.env.name3 }}
             value: {{ .Values.env.value | quote }}
           livenessProbe:
             exec:
