@@ -37,10 +37,9 @@ spec:
       sourceRef:
         kind: GitRepository
         name: podinfo
-  interval: 10m0s
+      interval: 1m0s
   targetNamespace: busybox 
-  values:
-    valuesFrom:
-      - kind: ConfigMap
-        name: busyboxdata
-        valuesKey: data.txt
+  valuesFrom:
+    - kind: ConfigMap
+      name: busyboxdata
+      valuesKey: data.txt
