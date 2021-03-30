@@ -8,11 +8,11 @@ image:
   tag: latest 
 env:
   name1: first
-  value: "1"
+  value: "5"
   name2: second
-  value: "1"
+  value: "6"
   name3: third
-  value: "1"
+  value: "7"
 service:
   name: busybox
   type: ClusterIP
