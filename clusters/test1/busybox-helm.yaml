@@ -43,4 +43,4 @@ spec:
     valuesFrom:
       - kind: ConfigMap
         name: busyboxconfigmap
-        valuesKey: data.txt
+        valuesKey: data.yaml
