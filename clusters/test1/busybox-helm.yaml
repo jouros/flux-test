@@ -19,6 +19,7 @@ spec:
   interval: 5m0s
   path: ./apps/kustomize/test1/busybox
   prune: true
+  targetNamespace: flux-system
   sourceRef:
     kind: GitRepository
     name: podinfo
@@ -43,4 +44,3 @@ spec:
     - kind: ConfigMap
       name: busyboxdata
       valuesKey: data.txt
-      namespace: busybox
