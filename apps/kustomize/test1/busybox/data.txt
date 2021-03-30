@@ -1,7 +1,7 @@
 env:
   name1: first
-  value: "1"
+  value1: "1"
   name2: second
-  value: "2"
+  value2: "2"
   name3: third
-  value: "3"
+  value3: "3"
