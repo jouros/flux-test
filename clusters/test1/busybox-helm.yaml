@@ -31,6 +31,7 @@ metadata:
   name: busybox
   namespace: flux-system
 spec:
+  interval: 10m0s
   chart:
     spec:
       chart: ./apps/base/charts/busybox/
